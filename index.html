@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Share In Social Network </title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="APP">
+<div ng-controller="ExampleController">
+<ul ng-social-buttons
+    data-url="'http://www.tutorialspoint.com/'"
+    data-title="current_title"
+    data-description="'{{ current_description }}'"
+    data-image="'http://s3.mistinfo.com/32/d8/32d8eab76f4c242f665bda66b5edc6c5.jpg'">
+    <li class="ng-social-facebook" class="md-raised md-primary">Facebook</li>
+    <li class="ng-social-google-plus">Google+</li>
+    <li class="ng-social-twitter">Twitter</li>
+    <li class="ng-social-pinterest">Pinterest</li>
+
+</ul>
+</div>
+<script>
+    angular.module("APP",["ngSocial",'ngMaterial']).
+    controller("ExampleController",['$scope',function($scope){
+        $scope.current_title = 'www.tutorialspoint.com/';
+        $scope.current_description = 'www.tutorialspoint.com/';
+    }])
+</script>
+
+
+
+
+</body>
+</html>
